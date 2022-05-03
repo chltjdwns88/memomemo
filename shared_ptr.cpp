@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 #include <queue>
-
+#include <dequeue>
 // shared_ptr  스마트 포인터 클래스
 // 포인터를 더 이상 사용 하지 않으면 메모리 자동으로 해재해줌
 // 메모리를 제때 해재 안해 발생하는 메모리 릭을 방지해줌
