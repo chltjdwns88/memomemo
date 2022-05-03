@@ -1,9 +1,25 @@
 #include <iostream>
 #include <memory>
+#include <vector>
+#include <map>
+#include <queue>
 
 // shared_ptr  스마트 포인터 클래스
 // 포인터를 더 이상 사용 하지 않으면 메모리 자동으로 해재해줌
 // 메모리를 제때 해재 안해 발생하는 메모리 릭을 방지해줌
+class CInvoker{
+	public:
+		CInvoker(){}
+		virtual ~CInvoker(){}
+		bool getCheckValue(){ return m_checkValue; }
+	private:
+		std::vector<int>m_insprite;
+		int32_t m_count;
+		int32_t m_size;
+		int64_t m_longSize;
+		bool m_checkValue;
+};
+
 int main()
 {
     // 객체 생성 후 바로 메모리 포인터 연결
@@ -47,5 +63,7 @@ int main()
     std::cout << "s : " << s.use_count() << " s2 : " << s4.use_count() << '\n';
     s4.reset();
     std::cout << "s : " << s.use_count() << " s2 : " << s4.use_count() << '\n';
+    CInvoker* cinvoker = new CInvoker();
+    std::cout << "here CInvoker -> " << static_cast<int>(cinvoker->getCheckValue()) << " ##\n";
     return 0;
 }
